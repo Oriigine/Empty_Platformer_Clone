@@ -376,6 +376,7 @@ public class Shoot : MonoBehaviour
     private void SetAimPosition(InputAction.CallbackContext _Context)
     {
         m_AimPosition = Camera.main.ScreenToWorldPoint(_Context.ReadValue<Vector2>());
+        
     }
 
     #endregion
