@@ -72,7 +72,7 @@ public class PlatformerController : MonoBehaviour
 
     [SerializeField]
     [Tooltip("Defines the user inputs (using the new Input System) to make the player jump")]
-    private InputAction m_JumpAction = new InputAction("Jump", InputActionType.Button, DEFAULT_JUMP_BINDING, null, null, "Axis");
+    private InputAction m_JumpAction = new InputAction("Jump", InputActionType.Button, DEFAULT_JUMP_BINDING, null, null, null);
 
     [Header("Movement Settings")]
 
@@ -260,7 +260,7 @@ public class PlatformerController : MonoBehaviour
         if (m_LastMovementAxis == 0f)
         {
             // Call OnBeginMove event
-            m_MovementEvents.OnBeginMove.Invoke(new MovementInfos { speed = m_Speed, lastPosition = lastPosition, currentPosition = targetPosition });
+            m_MovementEvents.OnBeginMove.Invoke(new MovementInfos { speed = m_Speed, lastPosition = lastPosition, currentPosition = targetPosition, orientation = Orientation, entity = gameObject });
         }
 
         // Process obstacles detection
@@ -280,7 +280,7 @@ public class PlatformerController : MonoBehaviour
         transform.position = targetPosition;
         Orientation = _Direction;
         // Call OnUpdateMove event
-        m_MovementEvents.OnUpdateMove.Invoke(new MovementInfos { speed = m_Speed, lastPosition = lastPosition, currentPosition = targetPosition });
+        m_MovementEvents.OnUpdateMove.Invoke(new MovementInfos { speed = m_Speed, lastPosition = lastPosition, currentPosition = targetPosition, orientation = Orientation, entity = gameObject });
 
         m_LastMovementAxis = _Direction.x;
 

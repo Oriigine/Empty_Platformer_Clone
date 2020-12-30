@@ -28,6 +28,9 @@ Called when the character starts moving.
 ```cs
 public struct MovementInfos
 {
+	// The entity that has just moved.
+	public GameObject entity;
+
 	// The current speed of the character.
 	public float speed;
 
@@ -36,6 +39,9 @@ public struct MovementInfos
 
 	// The position of the character after it has moved.
 	public Vector3 currentPosition;
+
+	// The orientation of the character when it has moved.
+	public Vector3 orientation;
 }
 ```
 
@@ -46,6 +52,9 @@ Called each frame while the character is moving (even if there's an obstacle in 
 ```cs
 public struct MovementInfos
 {
+	// The entity that has just moved.
+	public GameObject entity;
+
 	// The current speed of the character.
 	public float speed;
 
@@ -54,6 +63,9 @@ public struct MovementInfos
 
 	// The position of the character after it has moved.
 	public Vector3 currentPosition;
+
+	// The orientation of the character when it has moved.
+	public Vector3 orientation;
 }
 ```
 
