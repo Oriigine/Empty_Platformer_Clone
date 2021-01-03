@@ -117,6 +117,10 @@ public class ContactDamages : MonoBehaviour
 
             // Apply damages
             m_Health.RemoveLives(m_DamagesOnContact);
+
+            // ScreenShake
+            ScreenShake.instance.StartShake(.4f, .2f);
+
             // If not dead, begins invincibility state
             if (!m_Health.IsDead)
             {

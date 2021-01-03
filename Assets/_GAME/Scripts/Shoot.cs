@@ -363,6 +363,9 @@ public class Shoot : MonoBehaviour
     /// <param name="_Context">The current input context, from the InputAction delegate binding.</param>
     private void DoShoot(InputAction.CallbackContext _Context)
     {
+        // ScreenShake
+        ScreenShake.instance.StartShake(.2f, .1f);
+
         DoShoot();
     }
 

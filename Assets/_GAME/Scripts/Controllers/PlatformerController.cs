@@ -492,6 +492,9 @@ public class PlatformerController : MonoBehaviour
 
                     // Call OnLand event
                     m_JumpEvents.OnLand.Invoke(new LandingInfos { fallingTime = m_FallingTime, landingPosition = targetPosition });
+                    // Screen Shake
+                    ScreenShake.instance.StartShake(.2f, .1f);
+
 
                     m_FallingTime = 0f;
                 }

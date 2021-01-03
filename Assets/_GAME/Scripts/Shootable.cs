@@ -20,6 +20,9 @@ public class Shootable : MonoBehaviour
     /// </summary>
     public void NotifyHit(HitInfos _HitInfos)
     {
+        // Screen Shake
+        ScreenShake.instance.StartShake(.2f, .1f);
+
         m_OnShot.Invoke(_HitInfos);
     }
 
